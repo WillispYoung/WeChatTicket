@@ -1,0 +1,14 @@
+{
+  "SECRET_KEY": "GRMc7PH,dPWk0:/O9+O28mK1DJ<7`*+@pNO)cQJL-1J%*HBj#g",
+  "DEBUG": true,
+  "IGNORE_WECHAT_SIGNATURE": false,
+  "WECHAT_TOKEN": ":VAp_A>R(lDl,dbo+8h9m",
+  "WECHAT_APPID": "wx6e4d2c354e5da494",
+  "WECHAT_SECRET": "b44714c457afdf9aee59c2810870c1b3",
+  "DB_NAME": "wechatticket",
+  "DB_USER": "root",
+  "DB_PASS": "young",
+  "DB_HOST": "127.0.0.1", 
+  "DB_PORT": "3306",
+  "SITE_DOMAIN": "http://123.206.29.102/"
+}

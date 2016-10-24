@@ -15,9 +15,6 @@ from codex.baseview import BaseView
 from wechat.models import User
 
 
-__author__ = "Epsirom"
-
-
 class WeChatHandler(object):
 
     logger = logging.getLogger('WeChat')
@@ -87,6 +84,12 @@ class WeChatHandler(object):
 
     def url_bind(self):
         return settings.get_url('u/bind', {'openid': self.user.open_id})
+
+    def book_what(self, act_id):
+        return settings.get_url('u/activity', {'id': act_id})
+
+    def get_ticket(self, ticket):
+        return settings.get_url('/u/ticket', {'openid': self.user.open_id, 'ticket': ticket})
 
 
 class WeChatEmptyHandler(WeChatHandler):

@@ -1,11 +1,9 @@
 from django.db import models
-
 from codex.baseerror import LogicError
-
 
 class User(models.Model):
     open_id = models.CharField(max_length=64, unique=True, db_index=True)
-    student_id = models.CharField(max_length=32, unique=True, db_index=True)
+    student_id = models.CharField(max_length=32, db_index=True)
 
     @classmethod
     def get_by_openid(cls, openid):
@@ -13,7 +11,7 @@ class User(models.Model):
             return cls.objects.get(open_id=openid)
         except cls.DoesNotExist:
             raise LogicError('User not found')
-
+            
 
 class Activity(models.Model):
     name = models.CharField(max_length=128)
@@ -32,6 +30,13 @@ class Activity(models.Model):
     STATUS_DELETED = -1
     STATUS_SAVED = 0
     STATUS_PUBLISHED = 1
+
+    @classmethod
+    def get_by_id(cls, id):
+        try:
+            return cls.objects.get(pk=id)
+        except cls.DoesNotExist:
+            raise LogicError('Activity not found')
 
 
 class Ticket(models.Model):

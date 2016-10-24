@@ -30,6 +30,9 @@ SECRET_KEY = CONFIGS['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = CONFIGS['DEBUG']
 
+# django 1.10 needed
+# DATA_UPLOAD_MAX_NUMBER_FIELDS = 100
+
 # SECURITY WARNING: don't run with IGNORE_WECHAT_SIGNATURE turned on in production!
 IGNORE_WECHAT_SIGNATURE = CONFIGS['IGNORE_WECHAT_SIGNATURE']
 
